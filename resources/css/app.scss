@@ -1,0 +1,29 @@
+$body-bg: #e88d14;
+$border-radius: 30px;
+$primary: darken($body-bg, 0.5);
+
+@import '~bootstrap/scss/bootstrap';
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import "../theme/scss/mdb.free.scss";
+
+#login-form {
+    background: {
+        color: $white;
+    };
+    border: {
+        radius: $border-radius;
+    };
+}
+.btn-login {
+    @include button-variant(
+        $body-bg,
+        $white,
+        color-contrast($body-bg),
+        darken($body-bg, 25%),
+        $white,
+        $body-bg,
+        $body-bg,
+        $body-bg,
+        #000
+    );
+}
