@@ -1,10 +1,26 @@
 $body-bg: #e88d14;
 $border-radius: 30px;
 $primary: darken($body-bg, 0.5);
+$headings-font-family: Open Sans, sans-serif;
 
 @import '~bootstrap/scss/bootstrap';
 @import '@fortawesome/fontawesome-free/css/all.css';
 @import "../theme/scss/mdb.free.scss";
+
+h1 {
+    font: {
+        size: 18px;
+    }
+}
+
+#sidebar {
+    width: 264px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: $body-bg;
+    z-index: 1100;
+}
 
 #login-form {
     background: {
