@@ -7,19 +7,13 @@ $headings-font-family: Open Sans, sans-serif;
 @import '@fortawesome/fontawesome-free/css/all.css';
 @import "../theme/scss/mdb.free.scss";
 
+/* Cosntruccion del sitio */
+@import "dashboard.scss";
+
 h1 {
     font: {
         size: 18px;
     }
-}
-
-#sidebar {
-    width: 264px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    background: $body-bg;
-    z-index: 1100;
 }
 
 #login-form {

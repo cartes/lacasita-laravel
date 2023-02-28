@@ -22,24 +22,24 @@
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h1>Dashboard</h1>
+                <h1>{{env('APP_NAME')}}</h1>
             </div>
             <ul class="list-unstyled components">
                 <li>
-                    <a href="#usersSubMenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                    <a href="#usersSubMenu" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle">
                         <i class="fas fa-users"></i> Usuarios
                     </a>
                     <ul class="collapse list-unstyled" id="usersSubMenu">
                         <li>
-                            <a href="#">Ver Usuarios</a>
+                            <a class="nav-link" href="#">Ver Usuarios</a>
                         </li>
                         <li>
-                            <a href="#">Agregar Usuario</a>
+                            <a class="nav-link" href="#">Agregar Usuario</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#rolesSubMenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                    <a href="#rolesSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-users-cog"></i> Roles
                     </a>
                     <ul class="collapse list-unstyled" id="rolesSubMenu">
