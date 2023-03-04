@@ -6,6 +6,7 @@
     background: $body-bg;
     z-index: 1100;
     padding: 5px;
+    box-shadow: 1px 0 20px 0 #3f4d67;
 
     .sidebar-header {
         padding: 10px 20px;
@@ -26,5 +27,27 @@
 
     & > ul > li {
         padding: 10px 20px;
+    }
+}
+
+#content {
+    font-family: Open Sans, sans-serif;
+    position: relative;
+    display: block;
+    clear: both;
+    float: unset;
+    right: 0;
+    margin: 0 auto 0 265px;
+    background: $white;
+    min-height: 100vh;
+    padding: 10px 30px;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #111;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 1.15rem;
     }
 }
