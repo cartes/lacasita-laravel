@@ -26,8 +26,8 @@
             </div>
             <ul class="list-unstyled components">
                 <li>
-                    <a href="#usersSubMenu" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle">
-                        <i class="fas fa-users"></i> Usuarios
+                    <a href="{{route('users.index')}}" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle">
+                        <i class="fas fa-users"></i> Users
                     </a>
                     <ul class="collapse list-unstyled" id="usersSubMenu">
                         <li>
