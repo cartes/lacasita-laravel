@@ -34,9 +34,17 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
  */
 Route::group(['prefix' => 'users', 'as' => 'users.'], function() {
     Route::get('/', [UserController::class, 'index'])->name('index');
+    Route::get('/create', [UserController::class, 'create'])->name('create');
     Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
     Route::put('/{user}', [UserController::class, 'update'])->name('update');
-    Route::get('/roles', [RoleController::class, 'index'])->name('roles');
+});
+
+/**
+ * Rutas de roles
+ */
+Route::group(['prefix' => 'roles', 'as' => 'roles.'], function () {
+    Route::get('/', [RoleController::class, 'index'])->name('index');
+    Route::get('/create', [RoleController::class, 'create'])->name('create');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

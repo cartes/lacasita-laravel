@@ -26,6 +26,7 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => $hash, // password
             'remember_token' => Str::random(10),
+            'role_id' => 4,
         ];
     }
 

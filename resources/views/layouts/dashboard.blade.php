@@ -42,7 +42,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{route('users.roles')}}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="{{route('roles.index')}}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-users-cog"></i> Roles
                     </a>
                     <ul class="collapse list-unstyled" id="rolesSubMenu">
