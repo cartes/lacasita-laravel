@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,7 +36,7 @@ Route::group(['prefix' => 'users', 'as' => 'users.'], function() {
     Route::get('/', [UserController::class, 'index'])->name('index');
     Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
     Route::put('/{user}', [UserController::class, 'update'])->name('update');
-    Route::get('/roles', [UserController::class])->name('roles');
+    Route::get('/roles', [RoleController::class, 'index'])->name('roles');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

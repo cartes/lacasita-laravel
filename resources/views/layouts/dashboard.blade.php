@@ -14,7 +14,10 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/css/app.scss', 'resources/js/app.js'])
+    @vite(['resources/js/app.js']);
+    @vite(['resources/css/app.scss']);
+
+    @stack('scripts')
 </head>
 <body>
 <div id="app">
@@ -39,7 +42,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#rolesSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="{{route('users.roles')}}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-users-cog"></i> Roles
                     </a>
                     <ul class="collapse list-unstyled" id="rolesSubMenu">

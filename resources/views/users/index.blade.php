@@ -9,16 +9,34 @@
 
     <div class="row">
         <div class="col-12">
-            @foreach($users as $user)
+            <table class="table table-striped table-bordered" id="users-table">
+                <thead>
                 <tr>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->role->name ?? '' }}</td>
-                    <td><a href="{{ route('users.edit', $user->id) }}">Editar</a></td>
-                    <td><a href="{{ route('users.roles', $user->id) }}">Cambiar rol</a></td>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
                 </tr>
-            @endforeach
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </div>
-
 @endsection
+
+@push('scripts')
+<script type="module">
+    $('#users-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{!! route('users.index') !!}',
+        columns: [
+            { data: 'name', name: 'name' },
+            { data: 'email', name: 'email' },
+            { data: 'role.name', name: 'role.name' },
+            { data: 'action', name: 'action', orderable: false, searchable: false }
+        ],
+    });
+</script>
+@endpush

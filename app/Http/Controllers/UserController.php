@@ -5,16 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
-
+use DataTables;
 
 class UserController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
+        if ($request->ajax()) {
+            $users = User::all();
 
-        return view('users.index', compact('users'));
+            return DataTables::of($users)
+                ->addColumn('action', function($user) {
+                    $editUrl = route('users.edit', $user->id);
+                    $btn = '<a href="'.$editUrl.'" class="btn-primary"><i class="fa fa-pencil"></i></a>';
+                    return $btn;
+                })
+                ->make(true);
+        }
+
+        return view('users.index');
     }
 
     public function edit(User $user)
