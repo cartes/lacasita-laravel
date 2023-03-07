@@ -1,6 +1,6 @@
-$body-bg: #e88d14;
+$body-bg: #e8ba04;
 $border-radius: 30px;
-$primary: darken($body-bg, 0.5);
+$primary: #e8ba04;
 $headings-font-family: Open Sans, sans-serif;
 
 @import '~bootstrap/scss/bootstrap';
@@ -41,4 +41,14 @@ h1 {
         $body-bg,
         #000
     );
+}
+
+form, .dataTables_length, .dataTables_filter {
+    input, select, .form-control {
+        background: #f3f3f3 !important;
+    }
+}
+
+.page-link {
+    border-radius: 5px;
 }

@@ -16,7 +16,6 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nombre</th>
-                                    <th>Descripción</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -24,7 +23,6 @@
                                     <tr>
                                         <td>{{ $role->id }}</td>
                                         <td>{{ $role->name }}</td>
-                                        <td>{{ $role->description }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -29,12 +29,25 @@
             </div>
             <ul class="list-unstyled components">
                 <li>
-                    <a href="{{route('users.index')}}" data-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle">
+                    <a href="#postsSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-newspaper"></i> Posts
+                    </a>
+                    <ul class="collapse list-unstyled" id="postsSubMenu">
+                        <li>
+                            <a class="nav-link" href="{{route('post.index')}}">Ver posts</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{route('post.create')}}">Crear Nuevo post</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#usersSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="nav-link dropdown-toggle">
                         <i class="fas fa-users"></i> Users
                     </a>
                     <ul class="collapse list-unstyled" id="usersSubMenu">
                         <li>
-                            <a class="nav-link" href="#">Ver Usuarios</a>
+                            <a class="nav-link" href="{{route('users.index')}}">Ver Usuarios</a>
                         </li>
                         <li>
                             <a class="nav-link" href="#">Agregar Usuario</a>
@@ -42,15 +55,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{route('roles.index')}}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="#rolesSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-users-cog"></i> Roles
                     </a>
                     <ul class="collapse list-unstyled" id="rolesSubMenu">
                         <li>
-                            <a href="#">Ver Roles</a>
-                        </li>
-                        <li>
-                            <a href="#">Agregar Rol</a>
+                            <a href="{{route('roles.index')}}">Ver Roles</a>
                         </li>
                     </ul>
                 </li>

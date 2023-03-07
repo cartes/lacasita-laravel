@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,15 @@ Route::group(['prefix' => 'users', 'as' => 'users.'], function() {
 Route::group(['prefix' => 'roles', 'as' => 'roles.'], function () {
     Route::get('/', [RoleController::class, 'index'])->name('index');
     Route::get('/create', [RoleController::class, 'create'])->name('create');
+});
+
+/**
+ * Rutas de posts
+ */
+
+Route::group(['prefix' => 'post', 'as' => 'post.'], function() {
+    Route::get('/', [PostController::class, 'index'])->name('index');
+    Route::get('/create', [PostController::class, 'create'])->name('create');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
