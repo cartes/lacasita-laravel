@@ -29,6 +29,8 @@ class PostController extends Controller
             'short_description' => 'required|max:255',
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',
+            'latitude' => 'required',
+            'longitude' => 'required',
         ]);
 
         $post = new Post;
@@ -37,6 +39,8 @@ class PostController extends Controller
         $post->content = $validatedData['content'];
         $post->category_id = $validatedData['category_id'];
         $post->status = 'draft';
+        $post->latitude = $validatedData['latitude']; // asignar el valor de latitude
+        $post->longitude = $validatedData['longitude']; // asignar el valor de longitude
         $post->save();
 
         return redirect()->route('posts.index');
