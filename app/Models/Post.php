@@ -16,6 +16,9 @@ class Post extends Model
         'author_id',
         'category_id',
         'status',
+        'location',
+        'latitude',
+        'longitude',
     ];
 
     public function author()
@@ -27,4 +30,15 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function location()
+    {
+        return $this->hasOne(Location::class);
+    }
+
+    public function latLng()
+    {
+        return $this->hasOne(LatLng::class);
+    }
+
 }

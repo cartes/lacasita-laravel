@@ -1,13 +1,22 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <div class="container">
-        <h2>Posts</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Posts</h2>
+        </div>
+    </div>
+    @if($posts->isEmpty())
+        <h4>Por ahora no hay ningún post
+            <creado></creado>
+        </h4>
+        <a href="{{ route('post.create') }}" class="btn btn-primary">Crear post</a>
+    @else
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listado de Posts</h3>
+                        <h3 class="card-title py-3 rounded-top">Listado de Posts</h3>
                     </div>
                     <div class="card-body">
                         <table id="posts-table" class="table table-bordered">
@@ -34,7 +43,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    @endif
 @endsection
 
 @push('scripts')
