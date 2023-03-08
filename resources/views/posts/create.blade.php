@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <h3>Ubicación</h3>
                 <p>Ingrese la dirección para obtener la ubicación</p>
-                <input type="text" id="address" class="form-control" placeholder="Dirección">
+                <input type="text" id="address" class="form-control my-2" placeholder="Dirección">
                 <div id="map" style="height: 400px;"></div>
 
                 <input type="hidden" name="latitude" id="latitude">
@@ -40,6 +40,7 @@
             </div>
         </div>
     </div>
+
     <script>
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -75,6 +76,11 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initMap"></script>
 
-    @push('scripts')
-    @endpush
+    <script>
+        let input = document.getElementById('address');
+        let autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.setTypes(['geocode']);
+
+    </script>
 @endsection
