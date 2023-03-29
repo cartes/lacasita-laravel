@@ -15,7 +15,17 @@ class AuthController extends Controller
             return redirect()->intended('dashboard');
         }
 
-        dd(false);
-        return redirect()->back()->withInput($request->only('email'));
+        return redirect()->back()
+            ->withInput($request->only('email'))
+            ->withErrors([
+                'email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
+            ]);
     }
+
+    public function logout(Request $request)
+    {
+        $request->user()->tokens()->delete();
+        return redirect('/');
+    }
+
 }

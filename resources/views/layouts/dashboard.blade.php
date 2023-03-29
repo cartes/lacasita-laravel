@@ -14,12 +14,27 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/js/app.js']);
-    @vite(['resources/css/app.scss']);
+    @vite(['resources/js/app.js'])
+    @vite(['resources/css/app.scss'])
 
     @stack('scripts')
 </head>
 <body>
+<div class="top-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <h4>User Profile Info</h4>
+            </div>
+            <div class="col-auto ms-auto">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="my-1 btn btn-primary">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="app">
     <main class="py-0">
         <!-- Sidebar -->
@@ -38,6 +53,19 @@
                         </li>
                         <li>
                             <a class="nav-link" href="{{route('post.create')}}">Crear Nuevo post</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#categoriesSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-list-ul"></i> Categories
+                    </a>
+                    <ul class="collapse list-unstyled" id="categoriesSubMenu">
+                        <li>
+                            <a class="nav-link" href="{{route('categories.index')}}">Ver Categorias</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{route('categories.create')}}">Crear Nueva categorias</a>
                         </li>
                     </ul>
                 </li>

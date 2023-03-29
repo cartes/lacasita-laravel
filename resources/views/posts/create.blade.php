@@ -3,6 +3,11 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
+                <h2>Crear nuevo Post</h2>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <form action="{{ route('post.store') }}" method="POST">
                     @csrf

@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->string('location')->nullable();
-            $table->double('latitude')->nullable();
-            $table->double('longitude')->nullable();
+        Schema::table('categories', function (Blueprint $table) {
+            $table->string('status');
+            $table->string('icon');
         });
     }
 
@@ -27,10 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('location');
-            $table->dropColumn('latitude');
-            $table->dropColumn('longitude');
+        Schema::table('categories', function (Blueprint $table) {
+            $table->dropColumn('status');
+            $table->dropColumn('icon');
         });
     }
 };

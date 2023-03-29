@@ -7,8 +7,8 @@
         </div>
     </div>
     @if($posts->isEmpty())
-        <h4>Por ahora no hay ningún post
-            <creado></creado>
+        <h4>
+            Por ahora no hay ningún post creado
         </h4>
         <a href="{{ route('post.create') }}" class="btn btn-primary">Crear post</a>
     @else
